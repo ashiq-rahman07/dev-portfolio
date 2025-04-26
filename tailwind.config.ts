@@ -13,10 +13,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#00DF9A', // You can define custom colors
-        secondary: '#0070f3',
-        darkBg: '#111827',   // Dark background color
-        lightBg: '#ffffff',  // Light background color
+        lightBg: '#f9f9f9',
+        darkBg: '#1a1a1a',
+        primary: '#3490dc',
+        secondary: '#ffed4a',
+        darkText: '#d1d5db',
+        lightText: '#333',  // Light background color
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'], // You can use any custom font
