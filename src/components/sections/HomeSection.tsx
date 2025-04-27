@@ -1,54 +1,102 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import Particles from 'react-tsparticles';
+import { Typewriter } from 'react-simple-typewriter';
+import Link from 'next/link';
 
-export default function HomeSection() {
-  const [typing, setTyping] = useState('');
-  const fullName = 'Ashiqur Rahman';
-  const role = 'MERN Stack Developer';
-  const description = 'Passionate about building web applications with the latest technologies.';
-
-  useEffect(() => {
-    let index = 0;
-    const nameInterval = setInterval(() => {
-      setTyping((prev) => prev + fullName[index]);
-      index += 1;
-      if (index === fullName.length) {
-        clearInterval(nameInterval);
-      }
-    }, 150); // typing speed
-  }, []);
-
+const HomeSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-[#2C3E50] to-[#34495E] dark:bg-gradient-to-r dark:from-[#1C1C1C] dark:to-[#2F2F2F] px-6 text-center relative overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-start px-8 md:px-24 overflow-hidden bg-white dark:bg-darkBg transition-all duration-500"
     >
-      {/* Background Gradient Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#2C3E50] to-[#34495E] opacity-40 blur-xl"></div>
+      {/* Background Particles */}
+      <Particles
+        options={{
+          background: { color: { value: '' } },
+          fpsLimit: 60,
+          interactivity: {
+            events: { onHover: { enable: true, mode: 'repulse' }, resize: true },
+            modes: { repulse: { distance: 100, duration: 0.4 } },
+          },
+          particles: {
+            color: { value: '#00BFFF' },
+            links: { color: '#00BFFF', distance: 150, enable: true, opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 2, outModes: { default: 'bounce' } },
+            number: { density: { enable: true, area: 800 }, value: 50 },
+            opacity: { value: 0.5 },
+            shape: { type: 'circle' },
+            size: { value: { min: 1, max: 5 } },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0 z-0"
+      />
 
-      {/* Typing Effect for Name */}
-      <h1 className="text-4xl md:text-5xl font-mono text-white mb-6">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 animate-pulse">
-          {typing}
-        </span>
-        <span className="block text-gray-300 mt-2 text-lg">{role}</span>
-      </h1>
+      {/* Foreground Content */}
+      <div className="relative z-10">
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900 dark:text-white"
+        >
+          Hello, I&apos;m <span className="text-primary">Ashiqur Rahman</span>
+        </motion.h1>
 
-      {/* Description */}
-      <p className="text-xl text-gray-200 mb-8 animate__animated animate__fadeIn animate__delay-1s">
-        {description}
-      </p>
+        {/* Typewriter Effect Text */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300 h-12"
+        >
+          <Typewriter
+            words={[
+              'MERN Stack Developer',
+              'Full Stack Engineer',
+              'Freelancer',
+              'Web Application Specialist',
+            ]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1500}
+          />
+        </motion.h2>
 
-      {/* Buttons */}
-      <div className="flex space-x-6 animate__animated animate__fadeIn animate__delay-2s">
-        <button className="px-8 py-4 bg-primary text-white rounded-lg shadow-md hover:bg-[#1ABC9C] transition-all ease-in-out duration-300">
-          View Projects
-        </button>
-        <button className="px-8 py-4 bg-[#F39C12] text-white rounded-lg shadow-md hover:bg-[#E67E22] transition-all ease-in-out duration-300">
-          Contact Me
-        </button>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="text-gray-500 dark:text-gray-400 max-w-xl mb-8 leading-relaxed"
+        >
+          I specialize in building exceptional web applications with beautiful interfaces and solid backend architecture. Passionate about writing clean code and solving real-world problems.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.9 }}
+          className="flex space-x-4"
+        >
+          <Link href="#projects">
+            <button className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition">
+              View Projects
+            </button>
+          </Link>
+          <Link href="#contact">
+            <button className="px-6 py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition">
+              Contact Me
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default HomeSection;
