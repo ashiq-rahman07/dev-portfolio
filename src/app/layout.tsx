@@ -1,7 +1,7 @@
-// RootLayout.tsx - Server-side Layout (with no "use client")
+
 import type { Metadata } from "next";
 import { Poppins } from 'next/font/google';
-  // Import the client-side animations
+
 
 import "./globals.css";
 import ClientSideAnimations from "@/components/ClientSideAnimations";
@@ -12,8 +12,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'Portfolio made with Next.js 15 + Tailwind CSS',
+  title: 'Ashiqur Rahman | Portfolio',
+  description: 'I specialize in building exceptional web applications',
+  icons: {
+    icon: '/profile.jpg'
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

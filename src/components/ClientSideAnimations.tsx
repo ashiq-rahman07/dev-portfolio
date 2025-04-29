@@ -14,12 +14,12 @@ export default function ClientSideAnimations({ children }: { children: React.Rea
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
-          <main className="flex">
-              <Sidebar />
-              <div className="flex-1 ml-72 w-full z-10 overflow-y-auto scroll-smooth">
-                    {children}
-              </div>
-            </main>
+         <main className="flex relative">
+  <Sidebar />
+  <div className="flex-1 md:ml-72 w-full z-10 overflow-y-auto scroll-smooth">
+    {children}
+  </div>
+</main>
       </motion.div>
     </AnimatePresence>
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import { CameraIcon } from 'lucide-react';
 // import { motion } from 'framer-motion';
 // import Image from 'next/image';
 // import { FiGithub, FiExternalLink } from 'react-icons/fi';
@@ -37,6 +38,7 @@ const ProjectsSection = () => {
       <section id="projects" className="py-20 px-8 md:px-24">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">My Projects</h2>
+          <CameraIcon/>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projects.map((project) => (
