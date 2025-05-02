@@ -4,61 +4,34 @@ import ProjectCard, { ProjectProps } from './ProjectCard';
 
 export const projectsData: ProjectProps[] = [
   {
-    id: "ecommerce",
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Stripe", "MongoDB"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/ecommerce",
+    id: "1",
+    title: 'BasaFinder 🏡',
+    description: 'A smart rental housing platform with role-based dashboards (Admin, Landlord, Tenant).',
+    image: '/basefinder.png',
+    tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+    demoLink: 'https://basefinder-client.vercel.app/',
+    githubLink: 'https://github.com/ashiq-rahman07/basefinder-client',
     featured: true
   },
   {
-    id: "taskapp",
-    title: "Task Management App",
-    description: "A productive task management application with real-time updates and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2000",
+    id: "2",
+    title: 'Bike Shop E-commerce 🏍️',
+    description: 'A fully functional online bike shop with shopping cart, payments, and admin panel. Built using MERN Stack.',
+    image: '/bikeshop.png',
     tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/taskapp"
+    demoLink: 'https://bikeshop-frontend.vercel.app/',
+    githubLink: 'https://github.com/ashiq-rahman07/bikeshop-frontend',
   },
   {
-    id: "aigen",
-    title: "AI Content Generator",
-    description: "Content creation tool powered by artificial intelligence to help bloggers and marketers.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000",
+    id: "3",
+    title: 'PluggedIn | Team Projects 🎨',
+    description: 'Web base media recording site, Three recording modes available – Screen, Webcam, Audio Recording.',
+    image: '/plugdin.png',
     tags: ["React", "Python", "Flask", "OpenAI API"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/ai-generator"
+    demoLink:'https://pluggedin.vercel.app/',
+    githubLink: 'https://github.com/mdpahlovi/plugged-in',
   },
-  {
-    id: "realestate",
-    title: "Real Estate Platform",
-    description: "Property listing and search platform with map integration and virtual tours.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000",
-    tags: ["React", "Express", "MongoDB", "Google Maps API"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/realestate",
-    featured: true
-  },
-  {
-    id: "socialdash",
-    title: "Social Media Dashboard",
-    description: "Analytical dashboard for social media marketers with data visualization and reporting.",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2000",
-    tags: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/social-dashboard"
-  },
-  {
-    id: "fitnessapp",
-    title: "Fitness Tracking App",
-    description: "Mobile-responsive fitness application with workout plans and progress tracking.",
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=2000",
-    tags: ["React Native", "Firebase", "Redux", "Health API"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/fitness-app"
-  }
+
 ];
 
 const Projects = () => {
@@ -70,7 +43,7 @@ const Projects = () => {
             My <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A collection of applications and websites I've developed. Each project showcases different skills and technologies.
+            A collection of applications and websites I&apos;ve developed. Each project showcases different skills and technologies.
           </p>
         </div>
 

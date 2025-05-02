@@ -3,5 +3,8 @@
         "activityBar.background": "#450A72",
         "titleBar.activeBackground": "#600EA0",
         "titleBar.activeForeground": "#FCFAFF"
-    }
+    },
+    "cSpell.words": [
+        "newproject"
+    ]
 }

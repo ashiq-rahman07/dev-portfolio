@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold text-primary">
-          <span className="font-mono">{'<Dev />'}</span>
+          <span className="font-mono">{'Ashiqur Rahman'}</span>
         </a>
 
         {/* Desktop Menu */}
@@ -52,7 +52,7 @@ const Navbar = () => {
           ))}
           <ThemeToggle />
           <Button variant="default" asChild>
-            <a href="#contact">Let's Talk</a>
+            <a href="#contact">Let&apos;s Talk</a>
           </Button>
         </div>
 

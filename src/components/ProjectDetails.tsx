@@ -1,98 +1,145 @@
 "use client"
 
-import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 // import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
-interface IProject {
-    id: string;
-    title: string;
-    description: string;
-    features: string[];
-    technologies: string[];
-    image: string;
-    github: string;
-    live: string;
-  }
+// interface IProject {
+//     id: string;
+//     title: string;
+//     description: string;
+//     features: string[];
+//     technologies: string[];
+//     image: string;
+//     github: string;
+//     live: string;
+//   }
+
+interface ProjectData {
+  name: string;
+  id: string;
+  images: string[];
+  challenge: string;
+  solution: string;
+  features: string[];
+  tags:string[];
+  demoLink: string;
+  githubLink: string;
+}
+
   
 
-const ProjectDetails = ({project}:{project:IProject}) => {
+const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
  
-return (
-    <section className="min-h-screen py-20 px-8 md:px-24 bg-lightBg dark:bg-darkBg transition-all duration-500">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="max-w-6xl mx-auto"
-    >
-      {/* Project Image */}
-      <div className="w-full h-72 md:h-[500px] overflow-hidden rounded-xl mb-10 shadow-lg">
-        <Image
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-          width={500}
-          height={300}
-        />
+  return (
+    <div className="container mx-auto px-4 py-20">
+      <div className="mb-8">
+        <Button variant="outline" asChild>
+          <Link href="/" className="flex items-center">
+            <ArrowLeft className="mr-2" size={16} />
+            Back to Projects
+          </Link>
+        </Button>
       </div>
 
-      {/* Project Title */}
-      <h1 className="text-3xl md:text-5xl font-bold text-primary mb-4">{project.title}</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2">
+          <div className="mb-8 rounded-lg overflow-hidden">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {project?.images.map((img, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <div className="aspect-video overflow-hidden rounded-lg">
+                        <Image 
+                          src={img} 
+                          alt={`${project.name} screenshot ${index + 1}`} 
+                          className="w-full h-full object-cover"
+                          width={600}
+                          height={500}
+                        />
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
 
-      {/* Project Description */}
-      <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-        {project.description}
-      </p>
+          <h1 className="text-4xl font-bold mb-4">{project?.name}</h1>
+          
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project?.tags.map((tag, index) => (
+              <Badge key={index} variant="secondary" className="tech-stack-item">
+                {tag}
+              </Badge>
+            ))}
+          </div>
 
-      {/* Features */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Key Features</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
-          {project.features.map((feature, index) => (
-            <li key={index}>{feature}</li>
-          ))}
-        </ul>
-      </div>
+          <div className="mb-8">
+            <p className="text-lg mb-6">A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.</p>
+            
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold mb-4">The Challenge</h2>
+              <p className="mb-6">{project?.challenge}</p>
+              
+              <h2 className="text-2xl font-semibold mb-4">The Solution</h2>
+              <p>{project?.solution}</p>
+            </div>
+            
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {project?.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
 
-      {/* Technologies Used */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Technologies Used</h2>
-        <div className="flex flex-wrap gap-4">
-          {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 bg-primary/10 text-primary font-medium rounded-full text-sm"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="lg:col-span-1">
+          <Card className="p-6 sticky top-24 gradient-card">
+            <h2 className="text-xl font-semibold mb-6">Project Links</h2>
+            
+            <div className="space-y-4">
+              <Button className="w-full" asChild>
+                <a href={project?.demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <ExternalLink size={18} />
+                  <span>Live Demo</span>
+                </a>
+              </Button>
+              
+              <Button variant="outline" className="w-full" asChild>
+                <a href={project?.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <Github size={18} />
+                  <span>Source Code</span>
+                </a>
+              </Button>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-medium mb-4">Technologies Used</h3>
+              <div className="flex flex-wrap gap-2">
+                {project?.tags.map((tag, index) => (
+                  <Badge key={index} className="tech-stack-item">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
-
-      {/* Buttons */}
-      <div className="flex gap-6">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/80 text-white font-semibold rounded-lg transition"
-        >
-          <FiGithub size={22} /> View Code
-        </a>
-        <a
-          href={project.live}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-white font-semibold rounded-lg transition"
-        >
-          <FiExternalLink size={22} /> Live Demo
-        </a>
-      </div>
-    </motion.div>
-  </section>
-)
+    </div>
+  );
 }
 
 export default ProjectDetails

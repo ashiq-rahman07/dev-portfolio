@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/sections/Navbar';
+
 import Footer from '@/components/sections/Footer';
 
 
@@ -26,7 +26,7 @@ export default function RootLayout({
         <body
           className={`${poppins.className} bg-lightBg dark:bg-darkBg transition-colors duration-500`}
         >
-          <Navbar/>
+     
          
           {children}
           <Footer/>

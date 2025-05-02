@@ -1,10 +1,12 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card,  CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Code, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+
 
 export interface ProjectProps {
   title: string;
@@ -28,14 +30,17 @@ const ProjectCard = ({
   id = "1"
 }: ProjectProps) => {
   return (
-    <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg gradient-card ${
+    <div>
+         <Card className={`overflow-hidden overflow-y-hidden  transition-all duration-300 hover:shadow-lg gradient-card ${
       featured ? 'gradient-border' : ''
     }`}>
       <div className="aspect-video overflow-hidden">
-        <img 
+        <Image
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          width={300}
+          height={150}
         />
       </div>
       <CardHeader>
@@ -47,14 +52,14 @@ const ProjectCard = ({
             </Badge>
           )}
         </div>
-        <div className="flex flex-wrap gap-2 mb-2">
+        <div className="flex flex-wrap gap-2 mb-2 w-[250px]">
           {tags.map((tag, index) => (
             <Badge key={index} variant="secondary" className="tech-stack-item">
               {tag}
             </Badge>
           ))}
         </div>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-muted-foreground w-full">
           {description}
         </CardDescription>
       </CardHeader>
@@ -72,13 +77,14 @@ const ProjectCard = ({
           </a>
         </Button>
         <Button size="sm" asChild>
-          <Link to={`/project/${id}`} className="flex items-center gap-1">
+          <Link href={`/projects/${id}`} className="flex items-center gap-1">
             <span>Details</span>
             <ArrowRight size={16} />
           </Link>
         </Button>
       </CardFooter>
     </Card>
+    </div>
   );
 };
 

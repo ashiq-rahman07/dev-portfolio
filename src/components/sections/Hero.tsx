@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -31,7 +32,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-primary/60 blur-xl"></div>
               <div className="relative bg-card border border-border rounded-full w-full h-full flex items-center justify-center overflow-hidden">
-                <div className="text-6xl">👨‍💻</div>
+                <Image src='/profile.jpg' alt='profile img' width={150} height={150} className='w-full p-4' />
               </div>
               
               {/* Floating tech icons */}
