@@ -65,7 +65,7 @@ const Skills = () => {
             Technical <span className="text-primary">Skills</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            As a full-stack developer, I've cultivated a diverse range of technical skills across different domains.
+            As a full-stack developer, I&apos;ve cultivated a diverse range of technical skills across different domains.
           </p>
         </div>
 

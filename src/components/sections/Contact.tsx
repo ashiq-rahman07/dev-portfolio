@@ -30,7 +30,7 @@ const Contact = () => {
       console.log('Form data submitted:', formData);
       toast({
         title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        description: "Thanks for reaching out. I will get back to you soon.",
       });
       setFormData({
         name: '',
@@ -71,7 +71,7 @@ const Contact = () => {
             Get In <span className="text-primary">Touch</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Have a project idea or job opportunity? Feel free to contact me. I'm always open to discussing new projects and opportunities.
+            Have a project idea or job opportunity? Feel free to contact me. I&apos;m always open to discussing new projects and opportunities.
           </p>
         </div>
 

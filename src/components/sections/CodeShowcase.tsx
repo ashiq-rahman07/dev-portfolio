@@ -84,7 +84,7 @@ fetchDataWithRetry('https://api.example.com/data')
             Code <span className="text-primary">Snippets</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A glimpse into my coding style and approach to problem-solving. These are examples of reusable components and functions I've created.
+            A glimpse into my coding style and approach to problem-solving. These are examples of reusable components and functions I&apos;ve created.
           </p>
         </div>
         
