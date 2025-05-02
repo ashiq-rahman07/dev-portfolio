@@ -2,7 +2,9 @@
 "use client";
 
 import { AnimatePresence, motion } from 'framer-motion';
-import Sidebar from './Sidebar';
+import Navbar from './sections/Navbar';
+import Footer from './sections/Footer';
+
 
 export default function ClientSideAnimations({ children }: { children: React.ReactNode }) {
   return (
@@ -14,12 +16,11 @@ export default function ClientSideAnimations({ children }: { children: React.Rea
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
-         <main className="flex relative">
-  <Sidebar />
-  <div className="flex-1 md:ml-72 w-full z-10 overflow-y-auto scroll-smooth">
-    {children}
-  </div>
-</main>
+    
+      <Navbar />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+
       </motion.div>
     </AnimatePresence>
   );
