@@ -52,7 +52,7 @@ const Navbar = () => {
           ))}
           <ThemeToggle />
           <Button variant="default" asChild>
-            <a href="#contact">Let&apos;s Talk</a>
+          <a href="https://drive.google.com/file/d/1dxH5Bfm4qfxc70R3gDhzytzHtl2ToJ3I/view?usp=sharing" target='blank'>Resume</a>
           </Button>
         </div>
 
@@ -89,7 +89,7 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               asChild
             >
-              <a href="#contact">Let&apos;s Talk</a>
+              <a href="https://drive.google.com/file/d/1dxH5Bfm4qfxc70R3gDhzytzHtl2ToJ3I/view?usp=sharing" target='blank'>Resume</a>
             </Button>
           </div>
         </div>

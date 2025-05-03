@@ -6,37 +6,28 @@ import { Book, Code, Rocket } from 'lucide-react';
 const About = () => {
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
-      description: "Leading development of enterprise SaaS products, managing a team of developers, and implementing modern architectures."
+      title: "Web Development Mentor",
+      company: "Her Power Project, ICT Division Bangladesh",
+      period: "June- 2024 – December 2024  (6 months)t",
+      description: "Mentored 20+ female students in HTML, CSS, JavaScript, and CMS technologies.Designed structured learning paths, hands-on assignments, and real-world projects."
     },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Corp.",
-      period: "2018 - 2021",
-      description: "Developed and maintained multiple web applications, implemented RESTful APIs, and improved application performance."
-    },
-    {
-      title: "Frontend Developer",
-      company: "Creative Web Agency",
-      period: "2016 - 2018",
-      description: "Created responsive user interfaces, collaborated with designers, and implemented client-side functionality."
-    }
+
+   
   ];
+
 
   const education = [
     {
-      degree: "Master's in Computer Science",
-      institution: "Tech University",
-      period: "2014 - 2016",
-      description: "Specialized in software engineering and web technologies."
+      degree: " Bachelor of Science in Computer Science and Engineering (Incomplete)",
+      institution: "Sylhet Metropolitan University | Sylhet, Bangladesh",
+      period: "2017 – 2019 (Completed 7 Semesters)",
+      description: ""
     },
     {
-      degree: "Bachelor's in Software Engineering",
-      institution: "State University",
-      period: "2010 - 2014",
-      description: "Foundation in programming, algorithms, and system design."
+      degree: "Diploma in Architecture",
+      institution: "Habiganj Polytechnic Institute",
+      period: "2012 - 2016 ",
+      description: ""
     }
   ];
 
@@ -123,15 +114,15 @@ const About = () => {
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    AWS Certified Developer Associate
+                    Next Level Web Development - Programming Hero.
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    Google Cloud Professional Developer
+                    Complete Web Development - Programming Hero.
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    MongoDB Certified Developer
+                    Think in Redux Way - Learn With Sumith.
                   </li>
                 </ul>
               </div>

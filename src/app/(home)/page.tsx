@@ -2,7 +2,8 @@
 
 import About from '@/components/sections/About'
 import CodeShowcase from '@/components/sections/CodeShowcase'
-import Contact from '@/components/sections/ContactSection'
+import Contact from '@/components/sections/Contact'
+// import Contact from '@/components/sections/ContactSection'
 import CreativeSection from '@/components/sections/CreativeSection'
 import Hero from '@/components/sections/Hero'
 import Projects from '@/components/sections/Projects'

@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#home" className="text-xl font-bold text-primary">
-              <span className="font-mono">{'<Dev />'}</span>
+              <span className="font-mono">{'Ashiqur Rahman'}</span>
             </a>
             <p className="text-muted-foreground text-sm mt-2">
               Creating exceptional digital experiences.
