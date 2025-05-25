@@ -113,24 +113,24 @@ const project = [
     githubLink: "https://github.com/yourusername/taskapp"
   },
  {
-  name:"taskapp",
+  name:"ClassicRider Bike Shop",
   id:"2",
   images: [
-    "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2000",
-    "https://images.unsplash.com/photo-1554415707-6e8cfc93806b?q=80&w=2000",
-    "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=2000"
+    "/bike2.png",
+    "/bike.png",
+    "/bikedas.png",
+  
   ],
-    challenge: "Creating a collaborative task management system with real-time updates across multiple devices and users.",
-    solution: "Built a React frontend with Node.js backend using Socket.io for real-time communication. PostgreSQL database ensures data integrity and relationships.",
+    challenge: "Implementing role-based access control for admin and users.Integrating cart functionality that supports different product types (bikes and gearEnsuring smooth, responsive design across all devices.",
+    solution: "Used JWT-based authentication and middleware to protect routes and differentiate rolesCreated a flexible cart data structure that can handle multiple product types seamlesslyLeveraged Tailwind CSS and modern UI components for adaptive and beautiful layouts.",
     features: [
-      "Team workspaces and project organization",
-      "Real-time task updates and notifications",
-      "Drag-and-drop task prioritization",
-      "Time tracking and reporting",
-      "File attachments and commenting",
-      "Calendar integration and deadline reminders"
+     'Bike & gear catalog with images, prices, and categories',
+      'Add to cart & secure checkout process',
+      'Dynamic filtering & sorting',
+      'Admin dashboard for order and inventory management',
+      'User authentication with JWT'
     ],
-    tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
+    tags: ['React.js', 'TypeScript', 'Tailwind CSS', 'ShadCN UI', 'Node.js', 'Express.js', 'MongoDB','Redux Js'],
     demoLink: "https://demo-link.com",
     githubLink: "https://github.com/yourusername/taskapp"
   },

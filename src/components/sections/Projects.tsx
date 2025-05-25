@@ -17,7 +17,7 @@ export const projectsData: ProjectProps[] = [
     id: "2",
     title: 'Bike Shop E-commerce 🏍️',
     description: 'A fully functional online bike shop with shopping cart, payments, and admin panel. Built using MERN Stack.',
-    image: '/bikeshop.png',
+    image: '/bike.png',
     tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
     demoLink: 'https://bikeshop-frontend.vercel.app/',
     githubLink: 'https://github.com/ashiq-rahman07/bikeshop-frontend',
