@@ -1,38 +1,9 @@
 
 import React from 'react';
 import ProjectCard, { ProjectProps } from './ProjectCard';
+import { projectsData } from '@/data/project';
 
-export const projectsData: ProjectProps[] = [
-  {
-    id: "1",
-    title: 'BasaFinder 🏡',
-    description: 'A smart rental housing platform with role-based dashboards (Admin, Landlord, Tenant).',
-    image: '/basefinder.png',
-    tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
-    demoLink: 'https://basefinder-client.vercel.app/',
-    githubLink: 'https://github.com/ashiq-rahman07/basefinder-client',
-    featured: true
-  },
-  {
-    id: "2",
-    title: 'Bike Shop E-commerce 🏍️',
-    description: 'A fully functional online bike shop with shopping cart, payments, and admin panel. Built using MERN Stack.',
-    image: '/bike.png',
-    tags: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-    demoLink: 'https://bikeshop-frontend.vercel.app/',
-    githubLink: 'https://github.com/ashiq-rahman07/bikeshop-frontend',
-  },
-  {
-    id: "3",
-    title: 'PluggedIn | Team Projects 🎨',
-    description: 'Web base media recording site, Three recording modes available – Screen, Webcam, Audio Recording.',
-    image: '/plugdin.png',
-    tags: ["React", "Python", "Flask", "OpenAI API"],
-    demoLink:'https://pluggedin.vercel.app/',
-    githubLink: 'https://github.com/mdpahlovi/plugged-in',
-  },
 
-];
 
 const Projects = () => {
   return (

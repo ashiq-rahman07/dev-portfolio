@@ -55,7 +55,7 @@ const CreativeSection = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex-1">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">Passionate about creating elegant solutions</h3>
-                <p className="text-muted-foreground mb-6">
+                <p className=" mb-6">
                   I believe that the best applications are those that solve real problems while providing an exceptional user experience.
                 </p>
               </div>

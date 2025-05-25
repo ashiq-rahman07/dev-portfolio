@@ -3,7 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 // import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -23,13 +23,16 @@ import Link from 'next/link';
 interface ProjectData {
   name: string;
   id: string;
+  description: string;
   images: string[];
   challenge: string;
   solution: string;
   features: string[];
   tags:string[];
-  demoLink: string;
-  githubLink: string;
+  liveLink: string;
+   githubFrontEnd?: string;
+  githubBackEnd?: string;
+    
 }
 
   
@@ -37,12 +40,18 @@ interface ProjectData {
 const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
  
   return (
-    <div className="container mx-auto px-4 py-20">
-      <div className="mb-8">
+    <div className="container mx-auto px-4 pt-4">
+      <div className="mb-8 flex justify-between items-center">
         <Button variant="outline" asChild>
           <Link href="/" className="flex items-center">
             <ArrowLeft className="mr-2" size={16} />
             Back to Projects
+          </Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/" className="flex items-center">
+            <ArrowRight className="mr-2" size={16} />
+            Back to Home
           </Link>
         </Button>
       </div>
@@ -59,10 +68,12 @@ const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
                         <Image 
                           src={img} 
                           alt={`${project.name} screenshot ${index + 1}`} 
-                          className="w-full h-full object-cover"
-                          width={600}
-                          height={500}
+                          className="w-full h-full object-cover rounded-lg shadow-lg"
+                          width={1200} 
+                           height={800}
+                           quality={90}
                         />
+   
                       </div>
                     </div>
                   </CarouselItem>
@@ -84,7 +95,7 @@ const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
           </div>
 
           <div className="mb-8">
-            <p className="text-lg mb-6">A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.</p>
+            <p className="text-lg mb-6">{project?.description}</p>
             
             <div className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">The Challenge</h2>
@@ -94,34 +105,33 @@ const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
               <p>{project?.solution}</p>
             </div>
             
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                {project?.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </div>
+            
           </div>
         </div>
 
         <div className="lg:col-span-1">
           <Card className="p-6 sticky top-24 gradient-card">
-            <h2 className="text-xl font-semibold mb-6">Project Links</h2>
+            <h2 className="text-xl font-semibold mb-6 text-center">Project Links</h2>
             
             <div className="space-y-4">
               <Button className="w-full" asChild>
-                <a href={project?.demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <Link href={`${project?.liveLink}`}target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   <ExternalLink size={18} />
-                  <span>Live Demo</span>
-                </a>
+                  <span>Live Link</span>
+                </Link>
               </Button>
               
               <Button variant="outline" className="w-full" asChild>
-                <a href={project?.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <Link href={`${project?.githubFrontEnd}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   <Github size={18} />
-                  <span>Source Code</span>
-                </a>
+                  <span>Github Front End</span>
+                </Link>
+              </Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link href={`${project?.githubBackEnd}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <Github size={18} />
+                  <span>Github Back End</span>
+                </Link>
               </Button>
             </div>
 
@@ -134,6 +144,14 @@ const ProjectDetails = ({project}:{project:ProjectData | undefined}) => {
                   </Badge>
                 ))}
               </div>
+            </div>
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold mb-4 text-center">Key Features</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {project?.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
             </div>
           </Card>
         </div>

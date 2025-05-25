@@ -14,7 +14,8 @@ export interface ProjectProps {
   image: string;
   tags: string[];
   demoLink: string;
-  githubLink: string;
+   githubFrontEnd:string;
+    githubBackEnd:string;
   featured?: boolean;
   id?: string;
 }
@@ -25,7 +26,8 @@ const ProjectCard = ({
   image, 
   tags, 
   demoLink, 
-  githubLink,
+      githubFrontEnd,
+    githubBackEnd,
   featured = false,
   id = "1"
 }: ProjectProps) => {
@@ -38,9 +40,10 @@ const ProjectCard = ({
         <Image
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          width={300}
-          height={150}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-lg shadow-lg"
+            width={1200} 
+            height={800}
+            quality={90}
         />
       </div>
       <CardHeader>
@@ -52,29 +55,26 @@ const ProjectCard = ({
             </Badge>
           )}
         </div>
-        <div className="flex flex-wrap gap-2 mb-2 w-[250px]">
+        <div className="flex flex-wrap gap-2 mb-2 w-full items-start">
           {tags.map((tag, index) => (
             <Badge key={index} variant="secondary" className="tech-stack-item">
               {tag}
             </Badge>
           ))}
         </div>
-        <CardDescription className="text-muted-foreground w-full">
-          {description}
+        <CardDescription className="text-muted-foreground w-full text-start pt-3">
+           {description.length > 100
+    ? `${description.slice(0, 100)}...`
+    : description}
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex justify-between">
+        
         <Button variant="outline" size="sm" asChild>
-          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-            <Github size={16} />
-            <span>Code</span>
-          </a>
-        </Button>
-        <Button variant="outline" size="sm" asChild>
-          <a href={demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-            <ExternalLink size={16} />
-            <span>Live Demo</span>
-          </a>
+          <Link href={`${demoLink}`}target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <ExternalLink size={18} />
+                  <span>Live Link</span>
+                </Link>
         </Button>
         <Button size="sm" asChild>
           <Link href={`/projects/${id}`} className="flex items-center gap-1">

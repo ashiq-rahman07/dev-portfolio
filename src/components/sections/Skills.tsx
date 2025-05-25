@@ -28,28 +28,26 @@ const skillsData: SkillCategory[] = [
     skills: [
       { name: "Node.js", level: 85 },
       { name: "Express", level: 87 },
-      { name: "Python", level: 80 },
-      { name: "Django", level: 75 },
       { name: "GraphQL", level: 78 },
-      { name: "RESTful APIs", level: 90 }
+      { name: "RESTful APIs", level: 90 },
+      { name: "JWT Authentications ", level: 90 }
     ]
   },
   {
     name: "Database",
     skills: [
       { name: "MongoDB", level: 85 },
+      { name: "Mongoose", level: 85 },
       { name: "PostgreSQL", level: 82 },
-      { name: "MySQL", level: 80 },
-      { name: "Firebase", level: 85 },
-      { name: "Redis", level: 70 }
+      { name: "noSQL", level: 80 },
+      { name: "Prisma", level: 60 },
+      { name: "Redis", level: 50 }
     ]
   },
   {
     name: "DevOps & Tools",
     skills: [
-      { name: "Git", level: 90 },
-      { name: "Docker", level: 78 },
-      { name: "AWS", level: 75 },
+      { name: "Git & Github", level: 90 },
       { name: "CI/CD", level: 80 },
       { name: "Testing", level: 82 }
     ]
@@ -94,8 +92,8 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-center mb-10">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express', 
-              'Python', 'Django', 'MongoDB', 'PostgreSQL', 'Redux', 'GraphQL', 
-              'AWS', 'Docker', 'Git', 'Tailwind CSS', 'Figma', 'Jest'
+              'MongoDB', 'Mongoose', 'Redux',  'RESTful APIs',
+               'Git', 'Tailwind CSS', 'Figma', 'Jest'
             ].map((tech, index) => (
               <div key={index} className="tech-stack-item animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
                 {tech}
